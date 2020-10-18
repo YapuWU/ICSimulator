@@ -6,13 +6,27 @@
  */ 
 
 #include <avr/io.h>
+#include <avr/eeprom.h>
+#include "EEPROMInternal.h"
+#include "CTWISlave.h"
 
+
+EEPROMInternal<256,1024> eeprom;
 
 int main(void)
 {
-    /* Replace with your application code */
+	eeprom.SetOPAddress(0x0200);
+	for (uint16_t i=0;i<=0xFF;i++)
+	{
+		eeprom.Push(i);
+	}
+	eeprom.SetReady();
     while (1) 
     {
+		if(eeprom.IsReadyToWrite())
+		{
+			eeprom.StartWrite();
+		}
     }
 }
 

@@ -153,6 +153,18 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CTWISlave.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CTWISlave.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="EEPROMBase.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="EEPROMInternal.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
